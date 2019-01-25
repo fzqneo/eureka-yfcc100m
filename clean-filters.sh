@@ -1,2 +1,2 @@
 #!/bin/sh
-rm -vIr diamond/ diamond-*-filters-*.tgz
+rm -vrf diamond/ diamond-*-filters-*.tgz
