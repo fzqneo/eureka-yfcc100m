@@ -53,7 +53,7 @@ And, of course, you will pay your own AWS bill.
 
 ### Option 1: Use VirtualBox VM
 
-[Download the VM image](#)
+[Download the VM image](https://owncloud.cmusatyalab.org/owncloud/index.php/s/gacW9VDKBRWfiQ1)
 
 Login: ubuntu / Password: ubuntu
 
@@ -102,17 +102,17 @@ cd /path/to/hyperfind/dir/eureka-yfcc100m
 
 ## FAQ
 
-1. The search hangs, not moving forward.
+**The search hangs, not moving forward.**
 
 Be patient! This can happen for the first search session after the VMs start. Particularly, it can take a long time to activate the GPU on its first use.
 
-2. The GUI errors with `SocketException`.
+**The GUI errors with `SocketException`**
 
 Make sure you have opened the necessary port (5872) on the EC2 instances.
 
 Wait for the VMs to be in the "running" Instance State and "2/2 checks passed" in Status Checks.
 
-3. I can't create GPU instances on EC2.
+**I can't create GPU instances on EC2.**
 
 By default, AWS may only allow users to create 0 or 1 GPU instance. You may need to ask Amazon to increase you limit.
 
