@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BACKEND_IPS=($(aws ec2 describe-instances --filters "Name=tag:purpose,Values=edu.cmu.cs.eureka" "Name=instance-state-name,Values=running" --query 'Reservations[*].Instances[*].[InstanceId, PublicIpAddress]' --output text | sort | cut -f2))
+AMI_ID="ami-038b171e459bbba7f"
+BACKEND_IPS=($(aws ec2 describe-instances --filters "Name=image-id,Values=$AMI_ID" "Name=instance-state-name,Values=running" --query 'Reservations[*].Instances[*].[InstanceId, PublicIpAddress]' --output text | sort | cut -f2))
 echo "Found Eureka backend IPs (${#BACKEND_IPS[@]}): ${BACKEND_IPS[@]}"
 
 (
