@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-sh $(dirname $0)/get-filters.sh
+$(dirname $0)/get-filters.sh
 
 echo "Searching for hyperfind.jar in ${HYPERFIND_PATH:=$(realpath `dirname $0`/..)} ..."
 [ -e $HYPERFIND_PATH/hyperfind.jar ] || (echo "Failed! Have you downloaded and compiled HyperFind?" >&2; exit 1)

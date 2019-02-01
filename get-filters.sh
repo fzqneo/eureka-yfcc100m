@@ -1,6 +1,16 @@
 #!/bin/bash
 set -e
+
+declare -a FILTER_URLS=(
+    "https://github.com/fzqneo/eureka-yfcc100m/releases/download/v19.02-rc/diamond-core-filters-20190201.tgz"
+    "https://github.com/fzqneo/eureka-yfcc100m/releases/download/v19.02-rc/diamond-image-filters-20190201.tgz"
+)
+
 echo "Downloading and extracting filters ..."
-[ -e diamond-classic-filters-20190114.tgz ] || (wget -nv https://github.com/fzqneo/eureka-yfcc100m/releases/download/v19.01-rc/diamond-classic-filters-20190114.tgz; tar xzf diamond-classic-filters-20190114.tgz)
-[ -e diamond-image-filters-20190114.tgz ] || (wget -nv https://github.com/fzqneo/eureka-yfcc100m/releases/download/v19.01-rc/diamond-image-filters-20190114.tgz; tar xzf diamond-image-filters-20190114.tgz)
+
+for URL in ${FILTER_URLS[@]}; do
+    FILE=$(basename $URL)
+    [ -e $FILE ] || (wget -nv $URL; tar xzf $FILE)
+done;
+
 echo "Done"
