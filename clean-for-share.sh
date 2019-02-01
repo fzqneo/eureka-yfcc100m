@@ -1,6 +1,6 @@
 # general
 find /root/.*history /home/*/.*history -exec rm -f {} \;
-find / -name "authorized_keys" –exec rm –f {} \;
+find / -name "authorized_keys" -exec rm -f {} \;
 
 # server general
 shred -u /etc/ssh/*_key /etc/ssh/*_key.pub
