@@ -7,16 +7,16 @@ using AWS EC2 as back-end.
 
 ## Launching the Eureka Back-ends on AWS EC2
 
-TL;DR:
+### TL;DR:
 * Region: US West (Oregon), `us-west-2`
-* AMI ID: `ami-038b171e459bbba7f`
+* AMI ID: `ami-078829174439aee2c`
 * Instance type (recommended): `g3.4xlarge`
 * Public IP enabled
 * Security group
     * Inbound: TCP 22, TCP 5872
     * Outbound: all
 
-Recommended steps:
+### Recommended steps
 
 1. Create a *security group* `eureka-sg` with inbound rules TCP 22, TCP 5872, and outbound rules all.
 2. Create a *launch template* using the aforementioned AMI ID, security group, and recommended instance type.
@@ -102,9 +102,14 @@ cd /path/to/hyperfind/dir/eureka-yfcc100m
 
 ## FAQ
 
-**The search hangs, not moving forward.**
+**The progress hangs, not moving forward.**
 
-Be patient! This can happen for the first search session after the VMs start. Particularly, it can take a long time to activate the GPU on its first use.
+Be patient! 
+
+There are several cases when this can happen:
+- The first search session after the VMs start. The system may still be starting up, or the redis cache is loading from the disk.
+- The first time you use a GPU-involving filter. It can take a long time to activate the GPU on EC2 on its first use.
+- You use some just-in-time (JIT) machine learning filters that trains an ML model before filtering images. Depending on the algorithm and the training set size, the JIT training time can be considerable.
 
 **The GUI errors with `SocketException`**
 

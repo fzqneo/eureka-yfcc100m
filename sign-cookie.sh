@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AMI_ID="ami-038b171e459bbba7f"
+AMI_ID="ami-078829174439aee2c"
 declare -a BACKEND_IPS=($(aws ec2 describe-instances --filters "Name=image-id,Values=$AMI_ID" "Name=instance-state-name,Values=running" --query 'Reservations[*].Instances[*].[InstanceId, PublicIpAddress]' --output text | sort | cut -f2))
 echo "Found Eureka backend IPs (${#BACKEND_IPS[@]}): ${BACKEND_IPS[@]}"
 
