@@ -15,6 +15,7 @@ ToC:
   - [Prerequisite](#prerequisite)
   - [Option 1: Use VirtualBox VM](#option-1-use-virtualbox-vm)
   - [Option 2: Native Installation](#option-2-native-installation)
+- [Built-in Predicates](#built-in-predicates)
 - [Security and Privacy Risk](#security-and-privacy-risk)
 - [FAQ](#faq)
 - [Contact](#contact)
@@ -79,6 +80,7 @@ cd /home/ubuntu/hyperfind/eureka-yfcc100m
 ./start-search.sh
 ```
 
+Tested host: macOS 10.13.6 + VirtualBox 6.0; Ubuntu 18.04 + VirtualBox 6.0
 
 ### Option 2: Native Installation
 
@@ -117,6 +119,12 @@ cd /path/to/hyperfind/dir/eureka-yfcc100m
 ./start-search.sh
 ```
 
+
+## Built-in Predicates
+
+See [Brief Descriptions of Built-in Predicates](predicates.md)
+
+
 ## Security and Privacy Risk
 
 The pre-configured Eureka back-end in the AMI has turned off [ScopeCookie](https://github.com/cmusatyalab/opendiamond/wiki/ScopeCookie) verification.
@@ -124,7 +132,7 @@ It means anyone who knows the IP addresses of your EC2 instances can use the GUI
 Since YFCC100M is a public data set, the privacy risk should be minimal.
 To further reduce the risk, you can:
 
-1. *Stop* or *Terminate* your EC2 instances where you are done with your search.
+1. *Stop* or *Terminate* your EC2 instances as soon as you are done with your search.
 2. Configure your inbound rules to only accept connections from your IP address/range.
 3. Turn on ScopeCookie verification. This requires a private key and certificate be set up on the front-end and the back-end, respectively. Contact me for how.
 
@@ -152,6 +160,6 @@ By default, AWS may only allow users to create 0 or 1 GPU instance. You may need
 
 ## Contact
 
-Ziqiang Feng 
+Ziqiang Feng (Carnegie Mellon University)
 
 zf at cs dot cmu dot edu
