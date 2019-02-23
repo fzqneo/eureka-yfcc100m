@@ -4,7 +4,7 @@ and using AWS EC2 as back-end.
 
 We have provided: 
 + A public Amazon Machine Image (AMI) containing an installed Eureka back-end with pre-configured YFCC100M meta data.
-+ A VirtualBox VM containing the pre-configured front-end GUI
++ A VirtualBox image and a KVM image containing the pre-configured front-end GUI
 
 ToC:
 - [Launching the Eureka Back-ends on AWS EC2](#launching-the-eureka-back-ends-on-aws-ec2)
@@ -13,7 +13,7 @@ ToC:
   - [Notes](#notes)
 - [Starting the Front-end GUI](#starting-the-front-end-gui)
   - [Prerequisite](#prerequisite)
-  - [Option 1: Use VirtualBox VM](#option-1-use-virtualbox-vm)
+  - [Option 1: Use a VM (VirtualBox or KVM)](#option-1-use-a-vm-virtualbox-or-kvm)
   - [Option 2: Native Installation](#option-2-native-installation)
 - [Built-in Predicates](#built-in-predicates)
 - [Security and Privacy Risk](#security-and-privacy-risk)
@@ -66,21 +66,23 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 ```
 
-
 And, of course, you will pay your own AWS bill.
 
-### Option 1: Use VirtualBox VM
 
-[Download the VM image (v19.02)](https://owncloud.cmusatyalab.org/owncloud/index.php/s/9LdyQwlbCB2PTMC)
+### Option 1: Use a VM (VirtualBox or KVM)
+
+Download [VirtualBox image (v19.02)*](https://owncloud.cmusatyalab.org/owncloud/index.php/s/9LdyQwlbCB2PTMC) or [KVM image and xml (v19.02)](https://owncloud.cmusatyalab.org/owncloud/index.php/s/ktupvN1qwCUFYFG)
 
 Login: ubuntu / Password: ubuntu
 
 ```bash
+# Configure AWS credentials as shown above
 cd /home/ubuntu/hyperfind/eureka-yfcc100m
 ./start-search.sh
 ```
 
-Tested host: macOS 10.13.6 + VirtualBox 6.0; Ubuntu 18.04 + VirtualBox 6.0
+*Tested host: macOS 10.13.6 + VirtualBox 6.0; Ubuntu 18.04 + VirtualBox 6.0
+
 
 ### Option 2: Native Installation
 
