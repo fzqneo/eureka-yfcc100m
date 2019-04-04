@@ -1,5 +1,5 @@
 This repo contains the instructions to perform
-interactive search on the [YFCC100M](http://yfcc100m.appspot.com/) (*Yahoo Flickr Creative Commons 100 Million*) image dataset using the Eureka/OpenDiamond [(paper)](http://elijah.cs.cmu.edu/DOCS/feng-sec2018.pdf) software stack,
+interactive search on the [YFCC100M](http://yfcc100m.appspot.com/) (*Yahoo Flickr Creative Commons 100 Million*) image dataset using the Eureka/OpenDiamond [(paper)](http://elijah.cs.cmu.edu/DOCS/feng-sec2018.pdf) software stack ([video demo on a small dataset](https://youtu.be/Ajo0APnSV10)),
 and using AWS EC2 as back-end.
 
 We have provided: 
